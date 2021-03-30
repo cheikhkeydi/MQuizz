@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MQuizz">
+        <activity android:name=".q2"></activity>
+        <activity android:name=".q1" />
+        <activity android:name=".scripte1" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
