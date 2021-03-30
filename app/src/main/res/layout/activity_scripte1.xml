@@ -5,5 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scripte1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundhome"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/logowhite"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@drawable/logowhite"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
