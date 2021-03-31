@@ -40,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(helloworld1);
             }
         });
+        //Acceuil
+        acceuil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent helloworld1= new Intent(getApplicationContext(), acceuil.class);
+                startActivity(helloworld1);
+            }
+        });
+        //Jouer
+        jouer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent helloworld1= new Intent(getApplicationContext(), pseudo.class);
+                startActivity(helloworld1);
+            }
+        });
 
     }
 

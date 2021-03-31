@@ -20,7 +20,7 @@ public class scripte1 extends AppCompatActivity {
 
         new Handler().postDelayed(new Runnable() {
             @Override public void run() {
-                Intent i = new Intent(scripte1.this, MainActivity.class);
+                Intent i = new Intent(scripte1.this,acceuil.class);
                 startActivity(i);
                 finish(); } }, 3000);
     }
