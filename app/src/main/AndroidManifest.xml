@@ -4,12 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logoog"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logoog"
         android:supportsRtl="true"
         android:theme="@style/Theme.MQuizz">
-        <activity android:name=".pseudo"></activity>
+        <activity android:name=".matiere"></activity>
+        <activity android:name=".filiere" />
+        <activity android:name=".pseudo" />
         <activity android:name=".acceuil" />
         <activity android:name=".q2" />
         <activity android:name=".q1" />
