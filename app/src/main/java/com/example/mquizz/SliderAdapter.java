@@ -23,10 +23,10 @@ public class SliderAdapter extends PagerAdapter {
     public int[] slide_images ={
             R.drawable.acceui,
             R.drawable.slider2,
-            R.drawable.logowhite,
-            R.drawable.logowflat,
-            R.drawable.logowflat,
-            R.drawable.logoog
+            R.drawable.slider4,
+            R.drawable.slider3,
+            R.drawable.acceui,
+            R.drawable.acceui
     };
 
     //Le tableau des titres
