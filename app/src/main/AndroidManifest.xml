@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/logoog"
         android:supportsRtl="true"
         android:theme="@style/Theme.MQuizz">
-        <activity android:name=".matiere"></activity>
+        <activity android:name=".slider"></activity>
+        <activity android:name=".matiere" />
         <activity android:name=".filiere" />
         <activity android:name=".pseudo" />
         <activity android:name=".acceuil" />

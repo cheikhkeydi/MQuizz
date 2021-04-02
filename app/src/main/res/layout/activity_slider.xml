@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".slider">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="650dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/compris"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="76dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="581dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginRight="84dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/licence2"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="J'ai compris"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/sliderviewPager"
+            android:layout_width="match_parent"
+            android:layout_height="650dp">
+
+        </androidx.viewpager.widget.ViewPager>
+    </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/fordward"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="352dp"
+            android:layout_marginLeft="352dp"
+            android:layout_marginTop="319dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginRight="-1dp"
+            android:layout_marginBottom="243dp"
+            android:background="@drawable/forward"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="61dp"
+            android:layout_height="88dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="188dp"
+            android:layout_marginEnd="355dp"
+            android:layout_marginRight="355dp"
+            android:layout_marginBottom="374dp"
+            android:background="@drawable/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/dotslayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.456" />
+</androidx.constraintlayout.widget.ConstraintLayout>
