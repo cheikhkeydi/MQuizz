@@ -25,8 +25,8 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.slider2,
             R.drawable.slider4,
             R.drawable.slider3,
-            R.drawable.acceui,
-            R.drawable.acceui
+            R.drawable.slider5,
+            R.drawable.slider6
     };
 
     //Le tableau des titres
