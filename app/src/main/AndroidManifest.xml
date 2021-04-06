@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mquizz">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logoog"
@@ -9,6 +11,7 @@
         android:roundIcon="@drawable/logoog"
         android:supportsRtl="true"
         android:theme="@style/Theme.MQuizz">
+        <activity android:name=".Defaults" />
         <activity android:name=".q4" />
         <activity android:name=".q3" />
         <activity android:name=".slider" />

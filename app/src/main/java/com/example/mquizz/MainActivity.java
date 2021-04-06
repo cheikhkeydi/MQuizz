@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.backendless.Backendless;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
+
+import classe.User;
+
 public class MainActivity extends AppCompatActivity {
     private Button scripte,acceuil,niveau,info,jouer,filiere,matiere,score,questionnaire;
 
@@ -23,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         score=(Button) findViewById(R.id.score);
         questionnaire=(Button) findViewById(R.id.questionnaire);
         jouer=(Button) findViewById(R.id.jouer);
+
+
+
+
 
         //Redirection des boutons vers les pages correspondantes
         scripte.setOnClickListener(new View.OnClickListener() {

@@ -33,7 +33,7 @@ public class filiere extends AppCompatActivity {
 
         filiereList.add(new Filiere("Licence 1"));
         filiereList.add(new Filiere("Licence 2"));
-        filiereList.add(new Filiere("Licence 3"));
+        filiereList.add(new Filiere("Licence 3"));  
         filiereList.add(new Filiere("Master 1"));
 
         listView.setAdapter(new FiliereAdapter(this, filiereList));
