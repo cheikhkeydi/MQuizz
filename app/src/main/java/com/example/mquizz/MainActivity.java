@@ -74,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(hello);
             }
         });
+        //Matiere
+        matiere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hello = new Intent(getApplicationContext(),matiere.class);
+                startActivity(hello);
+            }
+        });
+        //Niveau
 
     }
 

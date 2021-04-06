@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MQuizz</string>
+    <string name="choix_matiere">Choisissez votre matière</string>
+    <string name="choix_niveau">Choisissez votre niveau</string>
 </resources>
