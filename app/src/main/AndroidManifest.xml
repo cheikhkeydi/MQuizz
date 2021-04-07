@@ -11,7 +11,9 @@
         android:roundIcon="@drawable/logoog"
         android:supportsRtl="true"
         android:theme="@style/Theme.MQuizz">
-        <activity android:name=".Defaults" />
+        <activity android:name=".liste_score"></activity>
+        <activity android:name=".score" />
+        <activity android:name=".userApplication" />
         <activity android:name=".q4" />
         <activity android:name=".q3" />
         <activity android:name=".slider" />

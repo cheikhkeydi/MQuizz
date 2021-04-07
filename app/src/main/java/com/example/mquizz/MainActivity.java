@@ -14,7 +14,7 @@ import com.backendless.exceptions.BackendlessFault;
 import classe.User;
 
 public class MainActivity extends AppCompatActivity {
-    private Button scripte,acceuil,niveau,info,jouer,filiere,matiere,score,questionnaire;
+    private Button scripte,acceuil,liste_score,info,jouer,filiere,matiere,score,questionnaire;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         scripte=(Button) findViewById(R.id.scripte);
         acceuil=(Button) findViewById(R.id.acceuil);
-        niveau=(Button) findViewById(R.id.niveau);
+        liste_score=(Button) findViewById(R.id.liste_score);
         info=(Button) findViewById(R.id.jouer);
         filiere=(Button) findViewById(R.id.filiere);
         matiere=(Button) findViewById(R.id.matiere);
@@ -92,7 +92,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(hello);
             }
         });
-        //Niveau
+        //Score
+        score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hello = new Intent(getApplicationContext(),score.class);
+                startActivity(hello);
+            }
+        });
+
+        //Score
+        liste_score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hello = new Intent(getApplicationContext(), liste_score.class);
+                startActivity(hello);
+            }
+        });
 
     }
 
