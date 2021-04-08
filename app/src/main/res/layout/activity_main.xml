@@ -89,6 +89,12 @@
             android:layout_height="wrap_content"
             android:text="Score"
             android:backgroundTint="#4CAF50" />
+        <Button
+            android:id="@+id/quizz"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="Quizz"
+            android:backgroundTint="#4CAF50" />
 
 
 

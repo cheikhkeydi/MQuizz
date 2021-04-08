@@ -6,15 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-import com.backendless.Backendless;
-import com.backendless.async.callback.AsyncCallback;
-import com.backendless.exceptions.BackendlessFault;
-
-import classe.User;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    private Button scripte,acceuil,liste_score,info,jouer,filiere,matiere,score,questionnaire;
+    private Button scripte,acceuil,liste_score,info,jouer,filiere,matiere,score,questionnaire,quizz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         score=(Button) findViewById(R.id.score);
         questionnaire=(Button) findViewById(R.id.questionnaire);
         jouer=(Button) findViewById(R.id.jouer);
-
+        quizz=(Button) findViewById(R.id.quizz);
 
 
 
@@ -106,6 +104,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent hello = new Intent(getApplicationContext(), liste_score.class);
+                startActivity(hello);
+            }
+        });
+        //Quizz
+        quizz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hello = new Intent(getApplicationContext(), QuizActivity.class);
                 startActivity(hello);
             }
         });

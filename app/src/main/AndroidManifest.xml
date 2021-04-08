@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mquizz">
 
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +12,6 @@
         android:theme="@style/Theme.MQuizz">
         <activity android:name=".liste_score"></activity>
         <activity android:name=".score" />
-        <activity android:name=".userApplication" />
         <activity android:name=".q4" />
         <activity android:name=".q3" />
         <activity android:name=".slider" />
@@ -24,7 +22,10 @@
         <activity android:name=".q2" />
         <activity android:name=".q1" />
         <activity android:name=".scripte1" />
+        <activity android:name=".QuizActivity"/>
+        <activity android:name=".ResultActivity"/>
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

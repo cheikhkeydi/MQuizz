@@ -57,11 +57,11 @@ public class ListeScoreAdapter extends BaseAdapter {
         TextView textPseudo = (TextView) convertView.findViewById(R.id.text_pseudo);
         TextView scorePseudo = (TextView) convertView.findViewById(R.id.score_adapter);
 
-        textPseudo.setText(userName);
+      //  textPseudo.setText(userName);
 
 
 
-        scorePseudo.setText(Integer.toString(userScore)+"/20");
+      //  scorePseudo.setText(Integer.toString(userScore)+"/20");
 
 
         return convertView;
