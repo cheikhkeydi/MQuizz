@@ -43,6 +43,8 @@ public class QuizActivity extends AppCompatActivity {
 		butNext=(Button)findViewById(R.id.button1);
 		setQuestionView();
 
+		butNext.setEnabled(true);
+
 
 		butNext.setOnClickListener(new View.OnClickListener() {		
 			@Override
@@ -71,14 +73,17 @@ public class QuizActivity extends AppCompatActivity {
 			}
 		});
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_quiz, menu);
 		return true;
 	}
+
 	private void setQuestionView()
 	{
+		butNext.setEnabled(true);
 		txtQuestion.setText(currentQ.getQUESTION());
 		rda.setText(currentQ.getOPTA());
 		rdb.setText(currentQ.getOPTB());

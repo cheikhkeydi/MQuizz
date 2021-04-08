@@ -64,6 +64,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		// Create tables again
 		onCreate(db);
 	}
+
 	// Adding new question
 	public void addQuestion(Question quest) {
 		//SQLiteDatabase db = this.getWritableDatabase();
