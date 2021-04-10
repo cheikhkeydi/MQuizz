@@ -31,8 +31,6 @@ public class matiereAdapter extends BaseAdapter {
     }
 
 
-
-
     @Override
     public int getCount() {
         return matiere_itemList.size();

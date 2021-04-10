@@ -50,7 +50,7 @@ public class ListeScoreAdapter extends BaseAdapter {
         convertView = layoutInflater.inflate(R.layout.adapter_listescore,null);
         //Lister les composants de notre classe USers
         User userList = users.get(position);
-        String userName =userList.getPseudo();
+        String userName =userList.getPseudo().toString();
         Integer  userScore = userList.getScore();
         //Instanciere les elements de AdapterListeScore
 
@@ -59,7 +59,8 @@ public class ListeScoreAdapter extends BaseAdapter {
 
       //  textPseudo.setText(userName);
 
-
+        textPseudo.setText(userName);
+        textPseudo.setText(userScore.toString());
 
       //  scorePseudo.setText(Integer.toString(userScore)+"/20");
 

@@ -26,7 +26,7 @@
             android:layout_marginRight="207dp"
             android:layout_marginBottom="41dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Username"
+            android:text=""
             android:textAllCaps="false"
             android:textColor="@color/colorprincipale"
             android:textSize="20dp" />
@@ -65,7 +65,7 @@
             android:layout_marginRight="9dp"
             android:layout_marginBottom="22dp"
             android:fontFamily="@font/poppinsbold"
-            android:text="15"
+            android:text=""
             android:textColor="@color/colorprincipale"
             android:textSize="34dp" />
 

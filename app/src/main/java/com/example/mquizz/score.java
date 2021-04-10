@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Table.Question;
+import classe.User;
 
 public class score extends AppCompatActivity {
     private Button button;
@@ -27,9 +29,9 @@ public class score extends AppCompatActivity {
         setContentView(R.layout.activity_score);
         button =(Button) findViewById(R.id.poursuivre);
         text_score = (TextView) findViewById(R.id.text_score);
+        List<User> list = new ArrayList<>();
 
-
-        text_score.setText("");
+        //text_score.setText(list.get);
 
         //Recuper le score dans la table questionnaire
 

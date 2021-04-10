@@ -28,11 +28,7 @@ public class liste_score extends AppCompatActivity {
         button =(Button) findViewById(R.id.btn_poursuivre);
 
         List<User> userList = new ArrayList<>();
-        userList.add(new User("Stephanie"));
-        userList.add(new User("Cheikh"));
-
-
-
+        userList.add(new User("Makhtar"));
 
         listView.setAdapter(new ListeScoreAdapter(userList, this));
 

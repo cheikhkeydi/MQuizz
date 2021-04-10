@@ -19,6 +19,7 @@ import static data.QuizContract.MovieEntry.KEY_OPTC;
 import static data.QuizContract.MovieEntry.KEY_QUES;
 import static data.QuizContract.MovieEntry.TABLE_QUEST;
 
+
 public class DbHelper extends SQLiteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
 	// Database Name
@@ -29,6 +30,7 @@ public class DbHelper extends SQLiteOpenHelper {
 	public DbHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
+
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		dbase=db;
@@ -54,8 +56,6 @@ public class DbHelper extends SQLiteOpenHelper {
 		Question q5=new Question("Android is?","NetworkInfo","GooglePlay","Linux Based","Linux Based");
 		this.addQuestion(q5);
 	}
-
-
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldV, int newV) {
@@ -110,4 +110,6 @@ public class DbHelper extends SQLiteOpenHelper {
 		row=cursor.getCount();
 		return row;
 	}
+
+
 }

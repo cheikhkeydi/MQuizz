@@ -17,6 +17,7 @@ public class User {
     {
         this.pseudo =null;
         this.id = 0;
+        this.score = score;
     }
 
     public int getScore()

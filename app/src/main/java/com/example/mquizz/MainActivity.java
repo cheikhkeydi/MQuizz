@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         jouer=(Button) findViewById(R.id.jouer);
         quizz=(Button) findViewById(R.id.quizz);
 
+        Toast.makeText(getApplicationContext(),"Bienvenue",Toast.LENGTH_LONG).show();
+
 
 
 

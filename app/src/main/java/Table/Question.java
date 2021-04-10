@@ -1,12 +1,14 @@
 package Table;
 
 public class Question {
+
 	private int ID;
 	private String QUESTION;
 	private String OPTA;
 	private String OPTB;
 	private String OPTC;
 	private String ANSWER;
+
 
 	public Question()
 	{
@@ -18,6 +20,7 @@ public class Question {
 		ANSWER="";
 	}
 
+
 	public Question(String qUESTION, String oPTA, String oPTB, String oPTC,
 			String aNSWER) {
 		
@@ -27,7 +30,6 @@ public class Question {
 		OPTC = oPTC;
 		ANSWER = aNSWER;
 	}
-
 
 
 	public int getID()
@@ -68,5 +70,6 @@ public class Question {
 	public void setANSWER(String aNSWER) {
 		ANSWER = aNSWER;
 	}
+
 	
 }
