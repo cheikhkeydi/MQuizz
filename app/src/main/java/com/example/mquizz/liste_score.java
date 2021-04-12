@@ -32,12 +32,13 @@ public class liste_score extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.layoutListe_score);
         button =(Button) findViewById(R.id.btn_poursuivre);
 
-        //DbHelper db = new DbHelper(this);
+        DbHelper db = new DbHelper(this);
         //quesList=db.getListUsers();
         //currentQ=quesList.get(qid);
-        quesList = new ArrayList<>();
+        /*quesList = new ArrayList<>();
         quesList.add(new Users("Malick"));
-        quesList.add(new Users("Fallou"));
+        quesList.add(new Users("Fallou"));  */
+        quesList = db.getAllUsers();
 
 
 
