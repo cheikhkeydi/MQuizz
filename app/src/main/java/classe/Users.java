@@ -1,19 +1,19 @@
 package classe;
 
-public class User {
+public class Users {
 
     public String pseudo;
     protected int id = 0;
     public int score = 0;
 
-    public User(String pseudo)
+    public Users(String pseudo)
     {
         this.pseudo =pseudo;
         this.id = id + 1;
         this.score = score;
     }
 
-    public User( )
+    public Users( )
     {
         this.pseudo =null;
         this.id = 0;

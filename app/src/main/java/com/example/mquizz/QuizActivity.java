@@ -36,6 +36,7 @@ public class QuizActivity extends AppCompatActivity {
 		DbHelper db=new DbHelper(this);
 		quesList=db.getAllQuestions();
 		currentQ=quesList.get(qid);
+
 		txtQuestion=(TextView)findViewById(R.id.textView1);
 		rda=(RadioButton)findViewById(R.id.radio0);
 		rdb=(RadioButton)findViewById(R.id.radio1);
@@ -83,7 +84,7 @@ public class QuizActivity extends AppCompatActivity {
 
 	private void setQuestionView()
 	{
-		butNext.setEnabled(true);
+		//butNext.setEnabled(true);
 		txtQuestion.setText(currentQ.getQUESTION());
 		rda.setText(currentQ.getOPTA());
 		rdb.setText(currentQ.getOPTB());

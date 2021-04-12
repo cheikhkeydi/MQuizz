@@ -12,28 +12,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Table.Question;
-import classe.User;
+import classe.Users;
+import data.DbHelper;
 
 public class score extends AppCompatActivity {
     private Button button;
-    private TextView text_score;
+    private TextView text_score,nomUser;
+    Users utilisateur;
+    List<Users> userList;
+    Users currentQ;
+    int qid =0;
 
-    List<Question> quesList;
-    int score=0;
-    int qid=0;
-    Question currentQ;
+    String score,nom;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
+
         button =(Button) findViewById(R.id.poursuivre);
         text_score = (TextView) findViewById(R.id.text_score);
-        List<User> list = new ArrayList<>();
+        nomUser = (TextView) findViewById(R.id.nomUser);
 
-        //text_score.setText(list.get);
 
-        //Recuper le score dans la table questionnaire
+        DbHelper db=new DbHelper(this);
+        //Afficher derniere score de la base de donnée
+        score=db.getLastScore();
+        text_score.setText(score);
+        //Afficher derniere nom de la base de donnée
+        nom = db.getLastPseudo();
+        nomUser.setText(nom);
+
 
 
 

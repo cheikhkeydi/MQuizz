@@ -12,15 +12,17 @@ import com.example.mquizz.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import classe.User;
+import classe.Users;
+import data.DbHelper;
 
 public class ListeScoreAdapter extends BaseAdapter {
 
-    private List<User> users = new ArrayList<>();
+//    private DbHelper;
+    private List<Users> users;
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public ListeScoreAdapter(List<User> users,Context context){
+    public ListeScoreAdapter(List<Users> users, Context context){
         this.users = users;
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
@@ -35,7 +37,7 @@ public class ListeScoreAdapter extends BaseAdapter {
     }
 
     @Override
-    public User getItem(int position) {
+    public Users getItem(int position) {
         return users.get(position);
     }
 
@@ -48,10 +50,11 @@ public class ListeScoreAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         convertView = layoutInflater.inflate(R.layout.adapter_listescore,null);
+        Users userList = users.get(position);
         //Lister les composants de notre classe USers
-        User userList = users.get(position);
-        String userName =userList.getPseudo().toString();
-        Integer  userScore = userList.getScore();
+
+        final String userName =userList.getPseudo().toString();
+        final Integer userScore = userList.getScore();
         //Instanciere les elements de AdapterListeScore
 
         TextView textPseudo = (TextView) convertView.findViewById(R.id.text_pseudo);
@@ -60,9 +63,9 @@ public class ListeScoreAdapter extends BaseAdapter {
       //  textPseudo.setText(userName);
 
         textPseudo.setText(userName);
-        textPseudo.setText(userScore.toString());
+        //scorePseudo.setText(userScore.toString());
 
-      //  scorePseudo.setText(Integer.toString(userScore)+"/20");
+        scorePseudo.setText(Integer.toString(userScore)+"/20");
 
 
         return convertView;

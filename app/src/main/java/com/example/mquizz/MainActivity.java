@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import data.DbHelper;
+
 public class MainActivity extends AppCompatActivity {
     private Button scripte,acceuil,liste_score,info,jouer,filiere,matiere,score,questionnaire,quizz;
 
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),"Bienvenue",Toast.LENGTH_LONG).show();
 
+        DbHelper myDB = new DbHelper(this);
+
+        //myDB.updateData(15);
 
 
 

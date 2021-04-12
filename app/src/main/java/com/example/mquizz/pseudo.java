@@ -14,7 +14,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import classe.User;
+import classe.Users;
+import data.DbHelper;
 
 import static android.widget.Toast.*;
 
@@ -22,6 +23,9 @@ public class pseudo extends AppCompatActivity {
     private Button valider;
     private EditText editText;
     private String name;
+    Users utilisateur;
+
+    DbHelper myDB;
 
 
     @Override
@@ -31,34 +35,34 @@ public class pseudo extends AppCompatActivity {
         valider = (Button) findViewById(R.id.valider);
         editText =(EditText) findViewById(R.id.editText);
 
-        List<User> user = new ArrayList<>();
+       // List<Users> user = new ArrayList<>();
 
-
-
-
-
-
+       DbHelper myDB =new DbHelper(this);
 
 
             valider.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(editText.getText().toString().isEmpty())
+                    String entry = editText.getText().toString();
+                    if(entry.isEmpty())
                     {
                         editText.setHintTextColor(Color.RED);
                         Toast toast = Toast.makeText(getBaseContext(), "Veuillez entrer votre pseudo!!", Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
                         toast.show();
                     }
                     else{
-                        user.add(new User(editText.getText().toString()));
+                        myDB.AjouterUSer(entry);
+                        myDB.updateData(18);
                         Intent hello = new Intent(getApplicationContext(), filiere.class);
                         startActivity(hello);
-                        Toast.makeText(getBaseContext(), "Bienvenue "+editText.getText().toString(), LENGTH_SHORT).show();
+                        Toast.makeText(getBaseContext(), "Bienvenue "+entry, LENGTH_SHORT).show();
                     }
 
                 }
             });
 
     }
+
+
+
 }
