@@ -7,12 +7,16 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.renderscript.Sampler;
 
+import Table.Niveau;
 import Table.Question;
 import classe.Users;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static data.NiveauContract.NiveauEntry.KEY_NANNEE;
+import static data.NiveauContract.NiveauEntry.KEY_NID;
+import static data.NiveauContract.NiveauEntry.TABLE_NQUEST;
 import static data.QuizContract.MovieEntry.KEY_ANSWER;
 import static data.QuizContract.MovieEntry.KEY_ID;
 import static data.QuizContract.MovieEntry.KEY_OPTA;
@@ -51,14 +55,72 @@ public class DbHelper extends SQLiteOpenHelper {
 				+ KEY_UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_UPSEUDO
 				+ " TEXT, " + KEY_USCORE+ " INTEGER DEFAULT 0" +")";
 
-
+		//Creation de la Table Niveau
+		String sql2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NQUEST + " ( "
+				+ KEY_NID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_NANNEE
+				+ " TEXT " +" )";
 
 		db.execSQL(sql);
 		db.execSQL(sql1);
+		db.execSQL(sql2);
 		addQuestions();
 		addUsers();
+		addNiveaux();
 		//db.close();
 	}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////////////////// MANIPULATION DE LA  TABLE NIVEAU ///////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public void addNiveaux() {
+		Niveau niveau1 = new Niveau("Licence 1");
+		this.addNiveau(niveau1);
+		Niveau niveau2 = new Niveau("Licence 2");
+		this.addNiveau(niveau2);
+		Niveau niveau3 = new Niveau("Licence 3");
+		this.addNiveau(niveau3);
+		Niveau niveau4 = new Niveau("Master 1");
+		this.addNiveau(niveau4);
+	}
+
+	//Sauvegarder ses données déclarés dans la bade de donnnees
+	public void addNiveau(Niveau niveau) {
+		ContentValues values = new ContentValues();
+		values.put(KEY_NANNEE, niveau.getANNEE());
+		dbase.insert(TABLE_NQUEST, null, values);
+	}
+
+	public Cursor getListNiveau(){
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor data = db.rawQuery("SELECT * FROM "+TABLE_NQUEST,null);
+		return data;
+	}
+
+    public List<Niveau> getAllNiveau() {
+        List<Niveau> niveauList = new ArrayList<Niveau>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_NQUEST;
+        dbase=this.getReadableDatabase();
+        Cursor cursor = dbase.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Niveau niveau = new Niveau();
+                niveau.setID(cursor.getInt(0));
+                niveau.setANNEE(cursor.getString(1));
+                niveauList.add(niveau);
+            } while (cursor.moveToNext());
+        }
+        // return quest list
+        return niveauList;
+    }
+
+
+
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 	//////////////////////////////////////////////////////////////////////////////////////

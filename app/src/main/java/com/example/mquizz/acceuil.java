@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import adapter.FiliereAdapter;
+
 public class acceuil extends AppCompatActivity {
     private Button valider;
     private TextView info;
@@ -18,6 +20,10 @@ public class acceuil extends AppCompatActivity {
         setContentView(R.layout.activity_acceuil);
         valider =(Button) findViewById(R.id.commencer);
         info =(TextView) findViewById(R.id.info);
+
+
+       Intent i=getIntent();
+       info.setText(i.getStringExtra(FiliereAdapter.SELECTNIVEAU));
 
         info.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -45,6 +45,7 @@ public class slider extends AppCompatActivity {
             public void onClick(View v) {
                 Intent hello = new Intent(getApplicationContext(), acceuil.class);
                 startActivity(hello);
+                finish();
             }
         });
 

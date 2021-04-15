@@ -15,7 +15,7 @@ import data.DbHelper;
 
 public class MainActivity extends AppCompatActivity {
     private Button scripte,acceuil,liste_score,info,jouer,filiere,matiere,score,questionnaire,quizz;
-
+    public  final static String AGE = "MonAge";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent helloworld1= new Intent(getApplicationContext(), acceuil.class);
+                //helloworld1.putExtra(DONNEE,"Donnee");
                 startActivity(helloworld1);
             }
         });

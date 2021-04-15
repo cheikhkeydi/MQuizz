@@ -42,6 +42,6 @@ dependencies {
 //Lottie Animation
     implementation 'com.airbnb.android:lottie:3.4.0'
 
-    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+   // implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 
 }

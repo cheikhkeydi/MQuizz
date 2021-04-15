@@ -15,32 +15,29 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import Table.Niveau;
 import adapter.FiliereAdapter;
 import classe.Filiere;
+import data.DbHelper;
 
 public class filiere extends AppCompatActivity {
     private ListView listView;
     private Button button;
+    private List<Niveau> niveauList;
+    private Niveau niveau;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filiere);
 
+
         listView = (ListView) findViewById(R.id.listview_filiere);
         button = (Button) findViewById(R.id.btn_adpaterFiliere);
 
-        List<Filiere> filiereList = new ArrayList<>();
+        DbHelper db = new DbHelper(this);
+        niveauList = db.getAllNiveau();
 
-        filiereList.add(new Filiere("Licence 1"));
-        filiereList.add(new Filiere("Licence 2"));
-        filiereList.add(new Filiere("Licence 3"));  
-        filiereList.add(new Filiere("Master 1"));
-
-        listView.setAdapter(new FiliereAdapter(this, filiereList));
-        
-
-
-
+        listView.setAdapter(new FiliereAdapter(this, niveauList));
 
         }
 }
