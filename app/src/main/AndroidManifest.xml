@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mquizz">
 
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/logoog"
@@ -10,7 +9,8 @@
         android:roundIcon="@drawable/logoog"
         android:supportsRtl="true"
         android:theme="@style/Theme.MQuizz">
-        <activity android:name=".liste_score"></activity>
+        <activity android:name=".Niveau"></activity>
+        <activity android:name=".liste_score" />
         <activity android:name=".score" />
         <activity android:name=".q4" />
         <activity android:name=".q3" />
@@ -22,10 +22,9 @@
         <activity android:name=".q2" />
         <activity android:name=".q1" />
         <activity android:name=".scripte1" />
-        <activity android:name=".QuizActivity"/>
-        <activity android:name=".ResultActivity"/>
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".ResultActivity" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

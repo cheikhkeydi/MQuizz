@@ -1,7 +1,6 @@
 package adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +11,16 @@ import android.widget.Toast;
 import com.example.mquizz.R;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
-import classe.Matiere_item;
-import classe.annee;
+import Table.Matiere;
 
 public class matiereAdapter extends BaseAdapter {
 
     private Context context;
-    private List<Matiere_item> matiere_itemList;
+    private List<Matiere> matiere_itemList;
     private LayoutInflater layoutInflater;
 
-    public matiereAdapter(Context context, List<Matiere_item> matiere_itemList){
+    public matiereAdapter(Context context, List<Matiere> matiere_itemList){
 
         this.context = context;
         this.matiere_itemList = matiere_itemList;
@@ -37,7 +34,7 @@ public class matiereAdapter extends BaseAdapter {
     }
 
     @Override
-    public Matiere_item getItem(int position) {
+    public Matiere getItem(int position) {
         return matiere_itemList.get(position);
     }
 
@@ -51,8 +48,8 @@ public class matiereAdapter extends BaseAdapter {
         convertView = layoutInflater.inflate(R.layout.adapter_matiere, null);
 
         //mettre le nom des items
-        Matiere_item matiere_item = getItem(position);
-        String current_namme = matiere_item.getNom();
+        Matiere matiere_item = getItem(position);
+        String current_namme = matiere_item.getNOM();
 
 
         //mettre le item dans le view
@@ -62,7 +59,7 @@ public class matiereAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Vous avez selectionner "+current_namme, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Vous avez choisi "+current_namme, Toast.LENGTH_SHORT).show();
 
             }
         });

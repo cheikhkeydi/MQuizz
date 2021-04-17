@@ -8,7 +8,7 @@
     android:background="@color/colorprincipale">
 
     <TextView
-        android:id="@+id/filiere"
+        android:id="@+id/filiere_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"

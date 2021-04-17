@@ -1,17 +1,17 @@
 package classe;
 
-public class Matiere_item {
+public class Matiere {
 
     public String nom;
     public int id = 0;
     annee nam;
 
-    public Matiere_item(String nom){
+    public Matiere(String nom){
         this.nom = nom;
         this.id = id + 1;
     }
 
-    public Matiere_item(annee nam){
+    public Matiere(annee nam){
         this.id = id + 1;
         this.nam = nam;
     }

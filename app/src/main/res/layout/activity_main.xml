@@ -68,6 +68,12 @@
             android:layout_height="wrap_content"
             android:text="Niveau"
             android:backgroundTint="#4CAF50" />
+        <Button
+            android:id="@+id/niveau"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="Filiere"
+            android:backgroundTint="#4CAF50" />
 
         <Button
             android:id="@+id/matiere"

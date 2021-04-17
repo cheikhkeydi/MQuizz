@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".matiere"
+    tools:context=".Niveau"
     android:background="@color/colorprincipale">
 
     <TextView
-        android:id="@+id/matiere_textview"
+        android:id="@+id/filiere_niveau"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/poppinsmedium"
-        android:text="@string/choix_matiere"
+        android:text="Choisissez votre filiere"
         android:textColor="@color/white"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,6 +34,8 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
             android:layout_width="250dp"
             android:layout_height="120dp"
             app:layout_constraintBottom_toTopOf="@+id/level1"
@@ -46,20 +48,19 @@
                 android:layout_height="match_parent"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/matiere" />
+                app:lottie_rawRes="@raw/student" />
+
         </LinearLayout>
 
         <ListView
-            android:id="@+id/list_matiere"
-            android:layout_width="300dp"
-            android:layout_height="500dp"
-            android:layout_marginTop="16dp"
-            android:scrollbars="vertical"
+            android:id="@+id/listview_niveau"
+            android:layout_width="270dp"
+            android:layout_height="450dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class filiere extends AppCompatActivity {
     private Button button;
     private List<Niveau> niveauList;
     private Niveau niveau;
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,8 @@ public class filiere extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.listview_filiere);
         button = (Button) findViewById(R.id.btn_adpaterFiliere);
+        textView = (TextView) findViewById(R.id.filiere_textview);
+
 
         DbHelper db = new DbHelper(this);
         niveauList = db.getAllNiveau();

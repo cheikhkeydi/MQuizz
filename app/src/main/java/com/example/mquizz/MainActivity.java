@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import data.DbHelper;
 
 public class MainActivity extends AppCompatActivity {
-    private Button scripte,acceuil,liste_score,info,jouer,filiere,matiere,score,questionnaire,quizz;
+    private Button scripte,acceuil,liste_score,info,jouer,filiere,matiere,score,questionnaire,quizz,niveau;
     public  final static String AGE = "MonAge";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         questionnaire=(Button) findViewById(R.id.questionnaire);
         jouer=(Button) findViewById(R.id.jouer);
         quizz=(Button) findViewById(R.id.quizz);
+        niveau = (Button) findViewById(R.id.niveau);
 
         Toast.makeText(getApplicationContext(),"Bienvenue",Toast.LENGTH_LONG).show();
 
@@ -120,6 +121,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent hello = new Intent(getApplicationContext(), QuizActivity.class);
+                startActivity(hello);
+            }
+        });
+        //Niveau
+        niveau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hello = new Intent(getApplicationContext(), Niveau.class);
                 startActivity(hello);
             }
         });

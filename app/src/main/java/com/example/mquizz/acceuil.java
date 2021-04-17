@@ -22,8 +22,8 @@ public class acceuil extends AppCompatActivity {
         info =(TextView) findViewById(R.id.info);
 
 
-       Intent i=getIntent();
-       info.setText(i.getStringExtra(FiliereAdapter.SELECTNIVEAU));
+      // Intent i=getIntent();
+     //  info.setText(i.getStringExtra(FiliereAdapter.SELECTNIVEAU));
 
         info.setOnClickListener(new View.OnClickListener() {
             @Override

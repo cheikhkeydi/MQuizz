@@ -5,33 +5,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="90dp"
         android:background="@drawable/fondback"
         android:layout_margin="4dp">
 
-        <TextView
-            android:id="@+id/text_pseudo"
-            android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="207dp"
-            android:layout_marginRight="207dp"
-            android:layout_marginBottom="41dp"
-            android:fontFamily="@font/poppinsmedium"
-            android:text="Moussa"
-            android:textAllCaps="false"
-            android:textColor="@color/colorprincipale"
-            android:textSize="20dp" />
-
-        <TextView
+        <!--   <TextView
             android:id="@+id/text_niveau"
             android:layout_width="183dp"
             android:layout_height="wrap_content"
@@ -43,14 +21,57 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="14dp"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="206dp"
             android:layout_marginRight="206dp"
-            android:layout_marginBottom="19dp"
-            android:fontFamily="@font/poppinsmedium"
+            android:layout_marginBottom="21dp"
+            android:fontFamily="@font/poppinsbold"
             android:text="Niveau "
             android:textColor="@color/orange"
             android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/text_matiere"
+            android:layout_width="183dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="206dp"
+            android:layout_marginRight="206dp"
+            android:layout_marginBottom="1dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Niveau "
+            android:textColor="@color/orange"
+            android:textSize="12dp" /> -->
+
+        <TextView
+            android:id="@+id/text_pseudo"
+            android:layout_width="243dp"
+            android:layout_height="29dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="145dp"
+            android:layout_marginRight="145dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Moussa"
+            android:textAllCaps="false"
+            android:textColor="@color/colorprincipale"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/score_adapter"
@@ -60,31 +81,16 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="14dp"
             android:layout_marginEnd="9dp"
             android:layout_marginRight="9dp"
-            android:layout_marginBottom="22dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/poppinsbold"
             android:text="15"
             android:textColor="@color/colorprincipale"
             android:textSize="34dp" />
 
-        <TextView
-            android:id="@+id/text_matiere"
-            android:layout_width="111dp"
-            android:layout_height="18dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="51dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="11dp"
-            android:fontFamily="@font/poppinsregular"
-            android:text="Matiere"
-            android:textColor="@color/colorprincipale"
-            android:textSize="8dp" />
+
     </RelativeLayout>
 
 </LinearLayout>
