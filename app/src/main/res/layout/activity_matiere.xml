@@ -7,6 +7,8 @@
     tools:context=".matiere"
     android:background="@color/colorprincipale">
 
+
+
     <TextView
         android:id="@+id/matiere_textview"
         android:layout_width="wrap_content"
@@ -60,6 +62,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/msg_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:text="Pas de données"
+            android:textColor="@color/colorprincipale"
+            android:textSize="24dp" />
+    </LinearLayout> -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

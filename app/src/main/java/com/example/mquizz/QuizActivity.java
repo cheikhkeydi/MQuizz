@@ -1,5 +1,6 @@
 package com.example.mquizz;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,10 +25,11 @@ public class QuizActivity extends AppCompatActivity {
 	int qid=0;
 	Question currentQ;
 	TextView txtQuestion;
-	RadioButton rda, rdb, rdc;
+	RadioButton rda, rdb, rdc,rdd;
 	Button butNext;
 
 
+	@SuppressLint("ResourceAsColor")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,26 +43,38 @@ public class QuizActivity extends AppCompatActivity {
 		rda=(RadioButton)findViewById(R.id.radio0);
 		rdb=(RadioButton)findViewById(R.id.radio1);
 		rdc=(RadioButton)findViewById(R.id.radio2);
+		rdd=(RadioButton)findViewById(R.id.radio3);
 		butNext=(Button)findViewById(R.id.button1);
+		//RadioGroup grp=(RadioGroup)findViewById(R.id.radioGroup1);
 		setQuestionView();
 
-		butNext.setEnabled(true);
+		butNext.setText("Passer");
+
+		if(rda.isChecked() || rdb.isChecked() || rdc.isChecked() || rdd.isChecked()){
+			butNext.setText("Valider");
+		}
+
 
 
 		butNext.setOnClickListener(new View.OnClickListener() {		
+
 			@Override
 			public void onClick(View v) {
+
 				RadioGroup grp=(RadioGroup)findViewById(R.id.radioGroup1);
 				RadioButton answer=(RadioButton)findViewById(grp.getCheckedRadioButtonId());
 				grp.clearCheck();
+
 				Log.d("yourans", currentQ.getANSWER()+" "+answer.getText());
 
-				if(currentQ.getANSWER().equals(answer.getText()))
+		/*		if(currentQ.getANSWER().equals(answer.getText().toString()))
 				{
+					butNext.setText("Valider");
 					score++;
 					Log.d("score", "Your score"+score);
 				}
-				if(qid<5){					
+				if(qid<5){
+					butNext.setText("Valider");
 					currentQ=quesList.get(qid);
 					setQuestionView();
 				}else{
@@ -70,7 +84,7 @@ public class QuizActivity extends AppCompatActivity {
 					intent.putExtras(b); //Put your score to your next Intent
 					startActivity(intent);
 					finish();
-				}
+				} */
 			}
 		});
 	}
@@ -89,6 +103,7 @@ public class QuizActivity extends AppCompatActivity {
 		rda.setText(currentQ.getOPTA());
 		rdb.setText(currentQ.getOPTB());
 		rdc.setText(currentQ.getOPTC());
+	//	rdd.setText(currentQ.getOPTD());
 		qid++;
 	}
 }

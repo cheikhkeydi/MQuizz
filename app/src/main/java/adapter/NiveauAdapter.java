@@ -3,6 +3,8 @@ package adapter;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,8 +72,16 @@ public class NiveauAdapter extends BaseAdapter {
                 Toast.makeText(context,"Vous avez choisi "+nom,Toast.LENGTH_LONG).show();
                 Intent hello = new Intent(context, com.example.mquizz.matiere.class);
                 //Renvoyer Filiere selectionner dans matiere
-                hello.putExtra(SELECTFILIERE,nom);
+               // hello.putExtra(SELECTFILIERE,nom);
+                //Sauvegarde Nom filiere
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(SELECTFILIERE, nom);
+                editor.commit();
+
                 context.startActivity(hello);
+
+
             }
         });
 

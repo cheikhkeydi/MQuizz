@@ -23,7 +23,6 @@
         <activity android:name=".q1" />
         <activity android:name=".scripte1" />
         <activity android:name=".QuizActivity" />
-        <activity android:name=".ResultActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

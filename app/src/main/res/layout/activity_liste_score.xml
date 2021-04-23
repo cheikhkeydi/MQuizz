@@ -11,19 +11,22 @@
         android:id="@+id/liste_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppinsmedium"
         android:text="La liste des scores"
         android:textColor="@color/white"
         android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="630dp"
+        android:layout_height="670dp"
         android:background="@drawable/listv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,10 +37,10 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
             android:layout_width="250dp"
             android:layout_height="120dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/level1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,23 +63,38 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-            app:layout_constraintVertical_bias="0.178" />
+            app:layout_constraintVertical_bias="0.038" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_poursuivre"
-            android:layout_width="250dp"
-            android:layout_height="80dp"
-            android:background="@drawable/bbackgound"
+            android:layout_width="244dp"
+            android:layout_height="51dp"
+            android:background="@drawable/poursuivre"
             android:fontFamily="@font/poppinsmedium"
             android:text="@string/poursuivre"
             android:textAllCaps="false"
             android:textSize="26dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.485"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layoutListe_score"
-            app:layout_constraintVertical_bias="0.384" />
+            app:layout_constraintVertical_bias="0.153" />
+
+        <ImageButton
+            android:id="@+id/btn_sortir"
+            android:layout_width="209dp"
+            android:layout_height="47dp"
+            android:background="@drawable/quitter"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Sortir"
+            android:textAllCaps="false"
+            android:textSize="26dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_poursuivre"
+            app:layout_constraintVertical_bias="0.296" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

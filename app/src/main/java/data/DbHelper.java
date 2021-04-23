@@ -32,6 +32,7 @@ import static data.QuizContract.MovieEntry.KEY_ID;
 import static data.QuizContract.MovieEntry.KEY_OPTA;
 import static data.QuizContract.MovieEntry.KEY_OPTB;
 import static data.QuizContract.MovieEntry.KEY_OPTC;
+//import static data.QuizContract.MovieEntry.KEY_OPTD;
 import static data.QuizContract.MovieEntry.KEY_QUES;
 import static data.QuizContract.MovieEntry.TABLE_QUEST;
 import static data.UserContract.UserEntry.KEY_UID;
@@ -55,10 +56,22 @@ public class DbHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		dbase=db;
 		//creation Table questionnaire
-		String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_QUEST + " ( "
+	/*	String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_QUEST + " ( "
 				+ KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_QUES
-				+ " TEXT, " + KEY_ANSWER+ " TEXT, "+KEY_OPTA +" TEXT, "
-				+KEY_OPTB +" TEXT, "+KEY_OPTC+" TEXT)";
+				+ " TEXT, " + KEY_ANSWER+ " INTEGER, "+KEY_OPTA +" TEXT, "
+				+KEY_OPTB +" TEXT, "+KEY_OPTC+" TEXT,"+KEY_OPTD+" TEXT)"; */
+		final String sql = "CREATE TABLE " +
+				TABLE_QUEST + " ( " +
+				KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
+				KEY_QUES + " TEXT, " +
+				KEY_OPTA+ " TEXT, " +
+				KEY_OPTB + " TEXT, " +
+				KEY_OPTC + " TEXT, " +
+				KEY_ANSWER + " INTEGER " +
+                   /* QuestionsTable.COLUMN_CATEGORY_ID + "INTEGER, " +
+                    "FOREIGN KEY(" + QuestionsTable.COLUMN_CATEGORY_ID + ") REFERENCES " +
+                    CategoriesTable.TABLE_NAME + "(" + CategoriesTable._ID + ")" + "ON DELETE CASCADE" +*/
+				")";
 
 		//Creation Table User
 		String sql1 = "CREATE TABLE IF NOT EXISTS " + TABLE_UQUEST + " ( "
@@ -116,6 +129,8 @@ public class DbHelper extends SQLiteOpenHelper {
 		this.addMatiere(matiere5);
 		Matiere matiere6 = new Matiere("Dev-Mobile","Informatique","Licence 3");
 		this.addMatiere(matiere6);
+		Matiere matiere7 = new Matiere("Complexité 2","Informatique","Master 1");
+		this.addMatiere(matiere7);
 	}
 
 	public void addMatiere(Matiere matiere){
@@ -369,15 +384,15 @@ public class DbHelper extends SQLiteOpenHelper {
 
 	private void addQuestions()
 	{
-		Question q1=new Question("If permissions are missing the application will get this at runtime","Parser", "SQLiteOpenHelper ", "Security Exception", "Security Exception");
+		Question q1=new Question("If permissions are missing the application will get this at runtime","Parser", "SQLiteOpenHelper ", "Security Exception", 2);
 		this.addQuestion(q1);
-		Question q2=new Question("An open source standalone database", "SQLite", "BackupHelper", "NetworkInfo", "SQLite");
+		Question q2=new Question("An open source standalone database", "SQLite", "BackupHelper", "NetworkInfo", 1);
 		this.addQuestion(q2);
-		Question q3=new Question("Sharing of data in Android is done via?","Wi-Fi radio", "Service Content Provider","Ducking", "Service Content Provider" );
+		Question q3=new Question("Sharing of data in Android is done via?","Wi-Fi radio", "Service Content Provider","Ducking", 2 );
 		this.addQuestion(q3);
-		Question q4=new Question("Main class through which your application can access location services on Android", "LocationManager", "AttributeSet", "SQLiteOpenHelper","LocationManager");
+		Question q4=new Question("Main class through which your application can access location services on Android", "LocationManager", "SQLiteOpenHelper","SQLiteOpenHelper",1);
 		this.addQuestion(q4);
-		Question q5=new Question("Android is?","NetworkInfo","GooglePlay","Linux Based","Linux Based");
+		Question q5=new Question("Android is?","NetworkInfo","GooglePlay","Linux Based",3);
 		this.addQuestion(q5);
 	}
 
@@ -386,15 +401,16 @@ public class DbHelper extends SQLiteOpenHelper {
 		//SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put(KEY_QUES, quest.getQUESTION());
-		values.put(KEY_ANSWER, quest.getANSWER());
 		values.put(KEY_OPTA, quest.getOPTA());
 		values.put(KEY_OPTB, quest.getOPTB());
 		values.put(KEY_OPTC, quest.getOPTC());
+		values.put(KEY_ANSWER, quest.getANSWER());
+		//values.put(KEY_OPTD, quest.getOPTC());
 		// Inserting Row
 		dbase.insert(TABLE_QUEST, null, values);
 	}
 
-	public List<Question> getAllQuestions() {
+	  public List<Question> getAllQuestions() {
 		List<Question> quesList = new ArrayList<Question>();
 		// Select All Query
 		String selectQuery = "SELECT  * FROM " + TABLE_QUEST;
@@ -406,16 +422,39 @@ public class DbHelper extends SQLiteOpenHelper {
 				Question quest = new Question();
 				quest.setID(cursor.getInt(0));
 				quest.setQUESTION(cursor.getString(1));
-				quest.setANSWER(cursor.getString(2));
-				quest.setOPTA(cursor.getString(3));
-				quest.setOPTB(cursor.getString(4));
-				quest.setOPTC(cursor.getString(5));
+				quest.setOPTA(cursor.getString(2));
+				quest.setOPTB(cursor.getString(3));
+				quest.setOPTC(cursor.getString(4));
+				quest.setANSWER(cursor.getInt(5));
+//				quest.setOPTD(cursor.getString(5));
 				quesList.add(quest);
 			} while (cursor.moveToNext());
 		}
 		// return quest list
 		return quesList;
 	}
+
+	/*public List<Question> getAllQuestions() {
+		List<Question> questionList = new ArrayList<>();
+		dbase = getReadableDatabase();
+		Cursor c = dbase.rawQuery("SELECT * FROM " + TABLE_QUEST, null);
+		if (c.moveToFirst()) {
+			do {
+				Question question = new Question();
+				question.setQUESTION(c.getString(c.getColumnIndex(TABLE_QUEST)));
+				question.setOPTA(c.getString(c.getColumnIndex(KEY_OPTA)));
+				question.setOPTB(c.getString(c.getColumnIndex(KEY_OPTB)));
+				question.setOPTC(c.getString(c.getColumnIndex(KEY_OPTC)));
+				question.setOPTD(c.getString(c.getColumnIndex(KEY_OPTD)));
+				question.setANSWER(c.getInt(c.getColumnIndex(KEY_ANSWER)));
+				questionList.add(question);
+			} while (c.moveToNext());
+		}
+		c.close();
+		return questionList;
+	} */
+
+
 
 		//recuperattion dernier element du tableau
 

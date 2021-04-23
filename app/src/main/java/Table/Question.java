@@ -7,7 +7,8 @@ public class Question {
 	private String OPTA;
 	private String OPTB;
 	private String OPTC;
-	private String ANSWER;
+	//private String OPTD;
+	private int ANSWER;
 
 
 	public Question()
@@ -17,17 +18,19 @@ public class Question {
 		OPTA="";
 		OPTB="";
 		OPTC="";
-		ANSWER="";
+		//OPTD="";
+		ANSWER=0;
 	}
 
 
 	public Question(String qUESTION, String oPTA, String oPTB, String oPTC,
-			String aNSWER) {
+			int aNSWER) {
 		
 		QUESTION = qUESTION;
 		OPTA = oPTA;
 		OPTB = oPTB;
 		OPTC = oPTC;
+		//OPTD = oPTD;
 		ANSWER = aNSWER;
 	}
 
@@ -48,7 +51,7 @@ public class Question {
 	public String getOPTC() {
 		return OPTC;
 	}
-	public String getANSWER() {
+	public int getANSWER() {
 		return ANSWER;
 	}
 	public void setID(int id)
@@ -67,9 +70,15 @@ public class Question {
 	public void setOPTC(String oPTC) {
 		OPTC = oPTC;
 	}
-	public void setANSWER(String aNSWER) {
+	public void setANSWER(int aNSWER) {
 		ANSWER = aNSWER;
 	}
 
-	
+	/*public String getOPTD() {
+		return OPTD;
+	}
+
+	public void setOPTD(String OPTD) {
+		this.OPTD = OPTD;
+	} */
 }
