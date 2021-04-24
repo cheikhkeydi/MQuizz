@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class pseudo extends AppCompatActivity {
         setContentView(R.layout.activity_pseudo);
         valider = (Button) findViewById(R.id.valider);
         editText =(EditText) findViewById(R.id.editText);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
        // List<Users> user = new ArrayList<>();
 

@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -35,6 +36,7 @@ public class matiere extends AppCompatActivity {
 
         list_matiere = (ListView) findViewById(R.id.list_matiere);
         textView = (TextView) findViewById(R.id.matiere_textview);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //msg_data = (TextView) findViewById(R.id.msg_data);
 
 

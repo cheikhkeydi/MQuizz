@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         jouer=(Button) findViewById(R.id.jouer);
         quizz=(Button) findViewById(R.id.quizz);
         niveau = (Button) findViewById(R.id.niveau);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Toast.makeText(getApplicationContext(),"Bienvenue",Toast.LENGTH_LONG).show();
 

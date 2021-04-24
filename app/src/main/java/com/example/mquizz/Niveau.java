@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -34,6 +35,7 @@ public class Niveau extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listview_niveau);
         button = (Button) findViewById(R.id.item_niveau);
         filiere = (TextView) findViewById(R.id.filiere_niveau);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Intent i =getIntent();
         String name = i.getStringExtra(FiliereAdapter.SELECTNIVEAU);

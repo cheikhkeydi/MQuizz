@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ public class acceuil extends AppCompatActivity {
         continuer =(ImageButton) findViewById(R.id.continuer);
         voir_score =(ImageButton) findViewById(R.id.voir_score);
         aide =(ImageButton) findViewById(R.id.aide);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
 

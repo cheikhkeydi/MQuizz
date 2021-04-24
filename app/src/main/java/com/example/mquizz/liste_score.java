@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -33,6 +34,7 @@ public class liste_score extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.layoutListe_score);
         button =(ImageButton) findViewById(R.id.btn_poursuivre);
         quitter =(ImageButton) findViewById(R.id.btn_sortir);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         DbHelper db = new DbHelper(this);
         quesList = db.getAllUsers();

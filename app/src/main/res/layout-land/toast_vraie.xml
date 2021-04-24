@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/toast_layout"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#DC052D9C">
+
+
+        <RelativeLayout
+            android:layout_width="485dp"
+            android:layout_height="283dp"
+            android:layout_margin="14dp"
+            android:background="@drawable/fondback"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/img_lotti"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="123dp"
+                    android:layout_marginLeft="123dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="112dp"
+                    android:layout_marginRight="112dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_rawRes="@raw/vraie" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/img_lottie"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="117dp"
+                    android:layout_marginLeft="117dp"
+                    android:layout_marginEnd="118dp"
+                    android:layout_marginRight="118dp"
+                    android:layout_marginBottom="19dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_rawRes="@raw/timesavedmobile" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

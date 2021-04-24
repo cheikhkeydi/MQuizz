@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -45,6 +46,7 @@ public class score extends AppCompatActivity {
 
         text_score = (TextView) findViewById(R.id.text_score);
         nomUser = (TextView) findViewById(R.id.nomUser);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         DbHelper db=new DbHelper(this);

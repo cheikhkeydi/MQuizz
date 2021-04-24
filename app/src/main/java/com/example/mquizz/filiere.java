@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +37,7 @@ public class filiere extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listview_filiere);
         button = (Button) findViewById(R.id.btn_adpaterFiliere);
         textView = (TextView) findViewById(R.id.filiere_textview);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         DbHelper db = new DbHelper(this);

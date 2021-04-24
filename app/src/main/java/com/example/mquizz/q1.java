@@ -16,6 +16,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -88,6 +89,7 @@ public class q1 extends AppCompatActivity {
         rb3 = findViewById(R.id.radio2);
         buttonConfirmNext = findViewById(R.id.button1);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //Recuperation de la matiere selectionnée
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String matiere = preferences.getString(NomMatiere,"Pas trouvé");
