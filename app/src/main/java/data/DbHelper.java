@@ -29,6 +29,8 @@ import static data.NiveauContract.NiveauEntry.KEY_NID;
 import static data.NiveauContract.NiveauEntry.TABLE_NQUEST;
 import static data.QuizContract.MovieEntry.KEY_ANSWER;
 import static data.QuizContract.MovieEntry.KEY_ID;
+//import static data.QuizContract.MovieEntry.KEY_NomMatiere;
+import static data.QuizContract.MovieEntry.KEY_NomMatiere;
 import static data.QuizContract.MovieEntry.KEY_OPTA;
 import static data.QuizContract.MovieEntry.KEY_OPTB;
 import static data.QuizContract.MovieEntry.KEY_OPTC;
@@ -56,22 +58,17 @@ public class DbHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		dbase=db;
 		//creation Table questionnaire
-	/*	String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_QUEST + " ( "
-				+ KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_QUES
-				+ " TEXT, " + KEY_ANSWER+ " INTEGER, "+KEY_OPTA +" TEXT, "
-				+KEY_OPTB +" TEXT, "+KEY_OPTC+" TEXT,"+KEY_OPTD+" TEXT)"; */
-		final String sql = "CREATE TABLE " +
+		String sql = "CREATE TABLE " +
 				TABLE_QUEST + " ( " +
 				KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
 				KEY_QUES + " TEXT, " +
 				KEY_OPTA+ " TEXT, " +
 				KEY_OPTB + " TEXT, " +
 				KEY_OPTC + " TEXT, " +
-				KEY_ANSWER + " INTEGER " +
-                   /* QuestionsTable.COLUMN_CATEGORY_ID + "INTEGER, " +
-                    "FOREIGN KEY(" + QuestionsTable.COLUMN_CATEGORY_ID + ") REFERENCES " +
-                    CategoriesTable.TABLE_NAME + "(" + CategoriesTable._ID + ")" + "ON DELETE CASCADE" +*/
-				")";
+				KEY_ANSWER + " INTEGER, " +
+	 			KEY_NomMatiere + " TEXT, " +
+				"FOREIGN KEY (" + KEY_NomMatiere + ") REFERENCES " +
+                    TABLE_MQUEST + " (" +KEY_MNOM +"));";
 
 		//Creation Table User
 		String sql1 = "CREATE TABLE IF NOT EXISTS " + TABLE_UQUEST + " ( "
@@ -98,12 +95,12 @@ public class DbHelper extends SQLiteOpenHelper {
 				+ "FOREIGN KEY ("+ KEY_MNomFiliere +" ) REFERENCES "+ TABLE_FQUEST + "( "+KEY_FNOM+"));";
 
 
-
-		db.execSQL(sql);
 		db.execSQL(sql1);
 		db.execSQL(sql2);
 		db.execSQL(sql3);
 		db.execSQL(sql4);
+		db.execSQL(sql);
+
 
 		addQuestions();
 		addUsers();
@@ -382,19 +379,89 @@ public class DbHelper extends SQLiteOpenHelper {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-	private void addQuestions()
+
+	 private void addQuestions()
+	{
+		//Licence 1 Java
+		Question q1=new Question("Java est un langage","Compilé", "Interprété ", "Compilé et interprété", 3,"Java");
+		this.addQuestion(q1);
+		Question q2=new Question("Java est un langage développé par","Hewlett-Packard", "Sun Microsystems ", "Microsoft", 2,"Java");
+		this.addQuestion(q2);
+		Question q3=new Question("La liaison tardive est essentielle pour assurer","L'encapsulation", "Le polymorphisme ", "L'héritage", 2,"Java");
+		this.addQuestion(q3);
+		Question q4=new Question("L'interprétation des programme Java est effectuée par : ","API", "JDK ", "JVM", 3,"Java");
+		this.addQuestion(q4);
+		Question q5=new Question("Quelle classe n'a pas de classe mère?","Une classe abstraite", "Object ", "String", 2,"Java");
+		this.addQuestion(q5);
+
+
+		//Licence 1
+		Question q6=new Question("Qu'est ce q'un algorithme?", "Une décision", "Instructions pas à pas utilisées pour resoudre un problème", "Un organigramme", 2,"Algo2");
+		this.addQuestion(q6);
+		Question q7=new Question("Pour répéter une tâche, nous utilisons une .....?", "Boucle", "Entrée", "Condition", 1,"Algo2");
+		this.addQuestion(q7);
+		Question q8=new Question("Si.....Alors.....Sinon.....Fin Si, vérifier", "Une seul condition", "Deux conditions", "Trois conditions", 2,"Algo2");
+		this.addQuestion(q8);
+		Question q9=new Question("Qu'est ce qu'un organigramme?", "Un diagramme qui représente un ensemble d'instructions", "Un schéma d'instruction", "Un langage de programmation spécifique", 1,"Algo2");
+		this.addQuestion(q9);
+		Question q10=new Question("Quelles sont les trois constructions d'algorithme?", "Entrée, Sortie, Processus", "Séquence, Sélection, Répétition", "Boucle, Entrée/Sortie, Processus", 2,"Algo2");
+		this.addQuestion(q10);
+
+
+
+		//Licence 3
+		Question q11=new Question("L'instance d'une classe est :","Un objet", "Une session","Une classe", 1,"dev-web");
+		this.addQuestion(q11);
+		Question q12=new Question("Le mot clé glob","Ne peut prendre qu'un seul paramètre", "Prend deux paramètres, dont un optionnel","Affiche une liste de fichiers", 2,"dev-web");
+		this.addQuestion(q12);
+		Question q13=new Question("Pour ce qui concerne notre UE, PHP signifie : ","Personal Home Page", "Personnel HTTP Preprocessor","Powerful HTML Prepocessor", 1,"dev-web");
+		this.addQuestion(q13);
+		Question q14=new Question("Le quel de ces mots-clés sont des noms de primitives PHP","Is_b", "Classof","Is_object", 3,"dev-web");
+		this.addQuestion(q14);
+		Question q15=new Question("Parmi les formats suivants, lequel s'appuie sur un langage à balises?","Le format HMTL", "Le format textes brut (TXT)","Le nouveau format Microsoft Word(DOCX)", 1,"dev-web");
+		this.addQuestion(q15);
+
+
+
+		//Licence 3
+		Question q16=new Question("Quelle est le tâche effectuée durant l'analyse syntaxique?", "Produire une suite de tokens", "Optimiser le code intermédiaire","Lire la suite de tokens par le scanner",3,"Compilation");
+		this.addQuestion(q16);
+		Question q17=new Question("Un analyseur prédictif non-recursif : ","S'appuie sur une file","Utilise pour son fonctionnement le symbole spéciale £","Utilise pour son fonctionnement le symbole spéciale $",2,"Compilation");
+		this.addQuestion(q17);
+		Question q18=new Question("Un compilateur utilise des automates finis","Pour l'analyse lexicale","Pour l'analyse logique","Pour l'analyse syntaxique",1,"Compilation");
+		this.addQuestion(q18);
+		Question q19=new Question("Deux grammaires sont équivalentes:  ","Seulement si elles ont les mêmes terminaux","Seulement si elles ont les mêmes non-terminaux","Si et seulement si elles engendrent le même langage",3,"Compilation");
+		this.addQuestion(q19);
+		Question q20=new Question("La phrase d'analyse qui s'appuie sur la théorie des grammaires est : ","La phase d'analyse lexicale","La phase d'analyse syntaxique","La phase d'analyse sémantique",2,"Compilation");
+		this.addQuestion(q20);
+
+
+
+		Question q21=new Question("Android est : ","NetworkInfo","GooglePlay","Linux Based",3,"Dev-Mobile");
+		this.addQuestion(q21);
+		Question q22=new Question("Le méta-langage XML : ","est utilisé pour définir le langage XHTML","Est un langage de programmation","Est un format difficile à lire pour une machine",1,"Dev-Mobile");
+		this.addQuestion(q22);
+		Question q23=new Question("Lesquells des importations suivantes sont nécessaires pour stoquer les informations d'état dans une application android?","Import android.os.Bundle","Using System.Text","Import android.PutInteger",1,"Dev-Mobile");
+		this.addQuestion(q23);
+		Question q24=new Question("Laquelle des classes suivantes dans android permet de créer une étiquette simple?","android.app.Activity","Android.os.Bundle","Android.view.Window",1,"Dev-Mobile");
+		this.addQuestion(q24);
+		Question q25=new Question("Quel langage permet de gerer l'interface front-end sous android","CSS","XML","Bootstrap",2,"Dev-Mobile");
+		this.addQuestion(q25);
+	}
+
+/*	private void addQuestions()
 	{
 		Question q1=new Question("If permissions are missing the application will get this at runtime","Parser", "SQLiteOpenHelper ", "Security Exception", 2);
 		this.addQuestion(q1);
 		Question q2=new Question("An open source standalone database", "SQLite", "BackupHelper", "NetworkInfo", 1);
 		this.addQuestion(q2);
-		Question q3=new Question("Sharing of data in Android is done via?","Wi-Fi radio", "Service Content Provider","Ducking", 2 );
+		Question q3=new Question("Sharing of data in Android is done via?","Wi-Fi radio", "Service Content Provider","Ducking", 2);
 		this.addQuestion(q3);
 		Question q4=new Question("Main class through which your application can access location services on Android", "LocationManager", "SQLiteOpenHelper","SQLiteOpenHelper",1);
 		this.addQuestion(q4);
 		Question q5=new Question("Android is?","NetworkInfo","GooglePlay","Linux Based",3);
 		this.addQuestion(q5);
-	}
+	} */
 
 	// Adding new question
 	public void addQuestion(Question quest) {
@@ -405,15 +472,16 @@ public class DbHelper extends SQLiteOpenHelper {
 		values.put(KEY_OPTB, quest.getOPTB());
 		values.put(KEY_OPTC, quest.getOPTC());
 		values.put(KEY_ANSWER, quest.getANSWER());
+		values.put(KEY_NomMatiere, quest.getNomMatiere());
 		//values.put(KEY_OPTD, quest.getOPTC());
 		// Inserting Row
 		dbase.insert(TABLE_QUEST, null, values);
 	}
 
-	  public List<Question> getAllQuestions() {
+	  public List<Question> getAllQuestions(String matiere) {
 		List<Question> quesList = new ArrayList<Question>();
 		// Select All Query
-		String selectQuery = "SELECT  * FROM " + TABLE_QUEST;
+		String selectQuery = "SELECT  * FROM " + TABLE_QUEST+ " WHERE "+KEY_NomMatiere+" ='"+matiere+"'";
 		dbase=this.getReadableDatabase();
 		Cursor cursor = dbase.rawQuery(selectQuery, null);
 		// looping through all rows and adding to list

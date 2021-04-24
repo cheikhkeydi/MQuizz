@@ -116,14 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(hello);
             }
         });
-        //Quizz
-        quizz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent hello = new Intent(getApplicationContext(), QuizActivity.class);
-                startActivity(hello);
-            }
-        });
         //Niveau
         niveau.setOnClickListener(new View.OnClickListener() {
             @Override

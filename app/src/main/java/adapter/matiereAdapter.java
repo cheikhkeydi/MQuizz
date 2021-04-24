@@ -3,7 +3,9 @@ package adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,7 +83,12 @@ public class matiereAdapter extends BaseAdapter {
                     @Override public void run() {
                         Intent hello = new Intent(context,com.example.mquizz.q1.class);
                         context.startActivity(hello);
-                        hello.putExtra(NomMatiere,current_namme);
+                        //Sauvegarde de la matiere selectionnée
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString(NomMatiere, current_namme);
+                        editor.commit();
+                        //hello.putExtra(NomMatiere,current_namme);
                     } }, 3600);
 
             }

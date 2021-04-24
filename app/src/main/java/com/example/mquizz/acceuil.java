@@ -7,25 +7,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import adapter.FiliereAdapter;
 
 public class acceuil extends AppCompatActivity {
-    private Button valider;
-    private TextView info;
+    private ImageButton commencer,voir_score,aide,continuer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil);
-        valider =(Button) findViewById(R.id.commencer);
-        info =(TextView) findViewById(R.id.info);
+        commencer =(ImageButton) findViewById(R.id.commencer);
+        continuer =(ImageButton) findViewById(R.id.continuer);
+        voir_score =(ImageButton) findViewById(R.id.voir_score);
+        aide =(ImageButton) findViewById(R.id.aide);
+
 
 
       // Intent i=getIntent();
      //  info.setText(i.getStringExtra(FiliereAdapter.SELECTNIVEAU));
 
-        info.setOnClickListener(new View.OnClickListener() {
+        aide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent hello = new Intent(getApplicationContext(), slider.class);
@@ -33,12 +36,29 @@ public class acceuil extends AppCompatActivity {
             }
         });
 
-        valider.setOnClickListener(new View.OnClickListener() {
+        commencer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent hello =new Intent(getApplicationContext(),pseudo.class);
                 startActivity(hello);
             }
         });
+
+        continuer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hello =new Intent(getApplicationContext(),matiere.class);
+                startActivity(hello);
+            }
+        });
+
+        voir_score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hello =new Intent(getApplicationContext(),liste_score.class);
+                startActivity(hello);
+            }
+        });
+
     }
 }

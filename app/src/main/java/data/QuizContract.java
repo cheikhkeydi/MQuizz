@@ -18,6 +18,7 @@ public class QuizContract {
         public static final String KEY_OPTA= "opta"; //option a
         public static final String KEY_OPTB= "optb"; //option b
         public static final String KEY_OPTC= "optc"; //option c
+        public static final String KEY_NomMatiere= "NomMatiere"; //ForeignKey NomMatiere
         //public static final String KEY_OPTD= "optd"; //option d
 
     }

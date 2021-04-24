@@ -3,6 +3,7 @@ package com.example.mquizz;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -29,6 +30,9 @@ import java.util.Locale;
 import Table.Question;
 import Table.Users;
 import data.DbHelper;
+
+import static adapter.matiereAdapter.NomMatiere;
+import static com.example.mquizz.Niveau.NAME;
 
 public class q1 extends AppCompatActivity {
     private static final long COUNTDOWN_IN_MILLIS = 16000;
@@ -84,12 +88,16 @@ public class q1 extends AppCompatActivity {
         rb3 = findViewById(R.id.radio2);
         buttonConfirmNext = findViewById(R.id.button1);
 
+        //Recuperation de la matiere selectionnée
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String matiere = preferences.getString(NomMatiere,"Pas trouvé");
+
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewCountDown.getTextColors();
         DbHelper dbHelper= new DbHelper(this);
 
         if (savedInstanceState == null) {
-            questionList = dbHelper.getAllQuestions();
+            questionList = dbHelper.getAllQuestions(matiere);
             questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
 
@@ -146,7 +154,7 @@ public class q1 extends AppCompatActivity {
             questionCounter++;
             textViewQuestionCount.setText( questionCounter + "/" + questionCountTotal);
             answered = false;
-            buttonConfirmNext.setText("Confirm");
+            buttonConfirmNext.setText("Confirmer");
 
             //Minuteur
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
@@ -176,13 +184,13 @@ public class q1 extends AppCompatActivity {
     }
 
     private void updateCountDownText(){
-        int minutes = (int)(timeLeftInMillis /1000) / 60;
+       // int minutes = (int)(timeLeftInMillis /1000) / 60;
         int seconds = (int)(timeLeftInMillis / 1000) % 60;
         String timeFormatted = String.format(Locale.getDefault(), "%02d",seconds);
         textViewCountDown.setText(timeFormatted);
 
         if(timeLeftInMillis <10000){
-            textViewCountDown.setTextColor(Color.RED);
+            textViewCountDown.setTextColor(Color.GREEN);
         }else {
             textViewCountDown.setTextColor(textColorDefaultCd);
         }
@@ -218,6 +226,7 @@ public class q1 extends AppCompatActivity {
         }
         showSolution();
     }
+    @SuppressLint("ResourceAsColor")
     private  void showSolution(){
         rb1.setTextColor(Color.GRAY);
         rb2.setTextColor(Color.GRAY);
@@ -233,7 +242,7 @@ public class q1 extends AppCompatActivity {
                 textViewQuestion.setText("Reponse 2 correcte");
                 break;
             case 3:
-                rb2.setTextColor(Color.GREEN);
+                rb3.setTextColor(Color.GREEN);
                 textViewQuestion.setText("Reponse 3 correcte");
                 break;
         }

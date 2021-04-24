@@ -1,74 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".acceuil"
-    android:background="@color/white"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorprincipale">
 
-    <LinearLayout
-        android:id="@+id/li1"
-        android:layout_width="250dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="90dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    <com.airbnb.lottie.LottieAnimationView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:lottie_rawRes="@raw/chrisgannon"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"/>
+        android:layout_height="match_parent">
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/li2"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/li1"
-        android:background="@drawable/bbackgound">
-
-        <Button
-            android:id="@+id/commencer"
+        <LinearLayout
+            android:id="@+id/li1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/poppinsmedium"
-            android:text="Commencer"
-            android:textColor="@color/white"
-            android:textSize="23dp" />
+            android:layout_height="250dp"
+            android:layout_marginBottom="110dp"
+            android:background="@drawable/recthaut"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/chrisgannon" />
 
 
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:fontFamily="@font/poppinsmedium"
-        android:text="Plus d'info"
-        android:textColor="@color/colorprincipale"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/li2"
-        app:layout_constraintVertical_bias="0.619" />
+        </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/li2"
+            android:layout_width="match_parent"
+            android:layout_height="189dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="275dp"
+            android:layout_marginBottom="267dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/commencer"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/nouveau_jeu"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Commencer"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:layout_marginRight="12dp"/>
+
+            <ImageButton
+                android:id="@+id/continuer"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/continuer" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/li4"
+            android:layout_width="match_parent"
+            android:layout_height="189dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="487dp"
+            android:layout_marginBottom="55dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/aide"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/aide"
+                android:layout_marginRight="12dp"/>
+
+            <ImageButton
+                android:id="@+id/voir_score"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/liste_score"
+                android:layout_marginRight="12dp"/>
+
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
